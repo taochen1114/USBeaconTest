@@ -1,0 +1,44 @@
+#bg {
+    background-image: url('page00.jpg');
+    position: fixed;
+    top: 0;
+    left: 0;
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+}
+#bg1 {
+    background-image: url('page01.jpg');
+    position: fixed;
+    top: 0;
+    left: 0;
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+}
+#bg2 {
+    background-image: url('page02.jpg');
+    position: fixed;
+    top: 0;
+    left: 0;
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+}
+#bg3 {
+    background-image: url('page03.jpg');
+    position: fixed;
+    top: 0;
+    left: 0;
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+}
+
+#bga {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+}

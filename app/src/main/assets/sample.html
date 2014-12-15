@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>AMNESIAC 記憶迷蹤</title>
+		<meta name="viewport" content="user-scalable=yes,target-densityDpi=device-dpi,width=device-width" />
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <script type='text/javascript'>
+            function showMsg(){
+                alert("Find USBeacon");
+                }
+            function showMsg1(){
+                alert("Find USBeacon 9901 ...A_A");
+                }
+            function showMsg2(){
+                alert("Find USBeacon 9902 ......");
+                }
+            function showMsg3(){
+                alert("Find USBeacon 9903 歡迎來到記憶迷蹤");
+                }
+            function getTemperature(){
+                $.ajax({
+                    type:"POST",
+                    url:"http://172.20.10.5/WaWebService/Json/GetTagValue/EIOTDEMO",
+                    data:"{\"Tags\":{[{\"Name\":\"溫度\"}]}}",
+                    async: false,
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: 'json',
+                    beforeSend: function(xhr){
+                        // generate base 64 string from username + password
+                        var bytes = Crypto.charenc.Binary.stringToBytes("admin: ");
+                        var base64 = Crypto.util.bytesToBase64(bytes);
+                        xhr.setRequestHeader("Authorization", "Basic " + base64);
+                    },
+                    success:function(data,status){
+                        alert("Data: " + data.Values[0].Value);
+                            },
+                    error:function(e){
+                                alert(JSON.stringify(e));
+                            }
+                    });
+
+                }
+        </script>
+	</head>
+	<body id="bg">
+
+    <a href="game01.html" id="bga">
+        <div>
+        </div>
+    </a>
+
+
+	</body>
+</html>

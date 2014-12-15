@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="thlutil">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/thlutil.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

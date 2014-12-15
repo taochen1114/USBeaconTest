@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>	
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>記憶迷蹤 Room 1</title>
+		<meta name="viewport" content="user-scalable=yes,target-densityDpi=device-dpi,width=device-width" />
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type="text/javascript" src="http://crypto-js.googlecode.com/files/2.0.0-crypto-min.js"></script>
+        <script type='text/javascript'>
+            function showMsg(){
+                alert("Find USBeacon");
+                }
+            function showMsg1(){
+                alert("這是鬱金香呢，上面有蟲幫他弄掉吧!");
+                }
+            function showMsg2(){
+                alert("這是百合花，怎麼有點乾乾的");
+                }
+            function showMsg3(){
+                alert("不愧是薰衣草，真香:)");
+                }
+            function getTemperature() {
+                $.ajax({
+                    type:"POST",
+                    url:"http://172.20.10.5/WaWebService/Json/GetTagValue/EIOTDEMO",
+                    data:"{\"Tags\":{[{\"Name\":\"溫度\"}]}}",
+                    async: false,
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: 'json',
+                    beforeSend: function(xhr){
+                        // generate base 64 string from username + password
+                        var bytes = Crypto.charenc.Binary.stringToBytes("admin: ");
+                        var base64 = Crypto.util.bytesToBase64(bytes);
+                        xhr.setRequestHeader("Authorization", "Basic " + base64);
+                    },
+                    success:function(data,status){
+                        alert("Data: " + data.Values[0].Value);
+                            },
+                    error:function(e){
+                                alert(JSON.stringify(e));
+                            }
+                    });
+
+                }
+        </script>
+	</head>
+	<body id="bg2">
+
+    <a href="game03.html" id="bga">
+        <div>
+        </div>
+    </a>
+
+
+	</body>
+</html>
